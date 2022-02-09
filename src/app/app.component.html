@@ -1,0 +1,43 @@
+<h1>Welcome</h1>
+  <h2>This website is under progress</h2>
+  <div class="topnav">
+    <a class="active" href="#home">Home</a>
+    <a href="#viewemployee">View All Employees</a>
+    <a href="#addEmployee">Add Employee</a>
+    <a href="#updateemployee">Update Employee</a>
+  </div>
+  <h4>This is the list of all employees</h4>
+ <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Phone</th>
+        <th scope="col">ID</th>
+        <th scope="col">Employee Code</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let e of employees">        
+        <td>{{e.name}}</td>
+        <td>{{e.phone}}</td>
+        <td>{{e.id}}</td>
+        <td>{{e.empcode}}</td>   
+      </tr>
+    </tbody>
+  </table>
+<br>
+<br>
+<div class="modal-body">
+  <div class = "form-group">
+  <form #addForm="ngForm" (ngSubmit)="addEmployee(addForm.value)">
+    <label for="name">Employee Name</label><br>
+    <input type="text" [(ngModel)]="emp.name" name="name" #name = "ngModel">
+    <br><br>
+    <label for="phone">Employee Phone</label><br>
+    <input type="text" [(ngModel)]="emp.phone" name="phone" #phone = "ngModel">
+    <br><br>
+    <button>Add Employee</button>
+  </form>
+</div>
+</div>
